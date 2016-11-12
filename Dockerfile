@@ -10,7 +10,7 @@ ENV JIRA_DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/a
 ENV RUN_USER            daemon
 ENV RUN_GROUP           daemon
 
-RUN apk add --update gzip curl tar build-base apr-dev openssl-dev \
+RUN apk add --update gzip curl tar build-base apr apr-dev openssl openssl-dev \
       && mkdir -p                           "${JIRA_HOME}" \
       && chmod -R 700                       "${JIRA_HOME}" \
       && chown ${RUN_USER}:${RUN_GROUP}     "${JIRA_HOME}" \
@@ -37,7 +37,9 @@ RUN apk add --update gzip curl tar build-base apr-dev openssl-dev \
       && cd tomcat-native-1.2.10-src/native \
       && ./configure --with-java-home=${JAVA_HOME} --prefix=/opt/atlassian/jira --libdir=/usr/lib \
       && make && make install \
-      && cd ../.. && rm -rf tc.tar.gz tomcat-native-1.2.10-src
+      && cd ../.. && rm -rf tomcat-native-1.2.10-src \
+      && apk del gzip curl build-base apr-dev openssl-dev \
+      && rm -rf /var/cache/apk/*
 
 
 
