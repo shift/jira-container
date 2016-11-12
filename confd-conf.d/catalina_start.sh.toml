@@ -1,0 +1,12 @@
+[template]
+prefix = "jira"
+keys = [
+  "Xmx",
+    "Xms"
+]
+
+src = "catalina_start.sh.tmpl"
+dest = "/opt/atlassian/jira/bin/catalina_start.sh"
+mode = "0775"
+
+reload_cmd = "/opt/atlassian/jira/bin/catalina.sh stop -force && /opt/atlassian/jira/bin/catalina_start.sh start"

@@ -1,0 +1,2 @@
+#!/bin/sh
+CATALINA_OPTS="-Xms{{getv "/Xms"}} -Xmx{{getv "/Xmx"}}" $(JIRA_INSTALL}/bin/catalina.sh run

@@ -1,0 +1,11 @@
+[template]
+prefix = "jira"
+keys = [
+  "user",
+  "password"
+]
+
+src = "tomcat-users.xml.tmpl"
+dest = "/opt/atlassian/jira/conf/tomcat-users.xml"
+
+reload_cmd = "/opt/atlassian/jira/bin/catalina.sh stop -force && /opt/atlassian/jira/bin/catalina.sh start"

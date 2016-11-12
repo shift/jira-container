@@ -1,0 +1,6 @@
+[template]
+src = "server.xml.tmpl"
+dest = "/opt/atlassian/jira/conf/server.xml"
+
+check_cmd = "/opt/atlassian/jira/bin/catalina.sh configtest"
+reload_cmd = "/opt/aslassian/jira/bin/catalina.sh stop -force && /opt/atlassian/jira/bin/catalina.sh start"
