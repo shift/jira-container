@@ -2,7 +2,7 @@ FROM quay.io/goodguide/oracle-java:alpine-3.4-java8-5
 
 MAINTAINER Vincent Palmer <@shift>
 
-ENV JIRA_VERSION=7.2.4
+ENV JIRA_VERSION=7.3.0
 ENV JIRA_HOME     /var/atlassian/application-data/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV JIRA_DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-${JIRA_VERSION}.tar.gz
